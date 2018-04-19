@@ -3,16 +3,33 @@ var By = webdriver.By;
 
 class LoginPage {
     goTo() {
-        driver.get('http://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F');
+        return driver.get('http://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F');
     }
 
     fillCredentials(email, password) {
-        driver.findElement(By.id('Email')).sendKeys(email);
-        driver.findElement(By.id('Password')).sendKeys(password);
+        return driver.findElement(By.id('Email')).then((emailBox) => {
+            console.log('Znalazlem element email');
+            return emailBox.sendKeys(email).then(() => {
+                console.log('Wypełniłem element email');
+                return driver.findElement(By.id('Password')).then((passwordBox) => {
+                    console.log('Znalazlem element password');
+                    return passwordBox.sendKeys(password).then(() => {
+                        console.log('Wypełniłem element password');
+                        return true;
+                    })
+                })
+            })
+        })
     }
     login() {
-        driver.findElement(By.css("input.button-1.login-button")).click()
-        return require('./dashboardPage');
+        return driver.findElement(By.css("input.button-1.login-button")).then((loginButton) => {
+            console.log('Znalazlem element login button');
+            return loginButton.click().then(() => {
+                console.log('Klikłem na element login button');
+                return require('./dashboardPage');
+            })
+        })
+
     }
 }
 

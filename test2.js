@@ -1,5 +1,7 @@
-var webdriver =require('selenium-webdriver');
+var webdriver = require('selenium-webdriver');
 var driver = new webdriver.Builder().withCapabilities(webdriver.Capabilities.chrome()).build();
+
+driver.manage().window().maximize();
 global.driver = driver;
 
 var LoginPage = require('./pages/loginPage');
@@ -32,7 +34,19 @@ var LoginPage = require('./pages/loginPage');
 // loginPage.login();
 
 var loginPage = LoginPage;
-loginPage.goTo();
-loginPage.fillCredentials('admin@yourstore.com','admin');
-var dashboardPage = loginPage.login();
-dashboardPage.logout();
+loginPage.goTo().then(() => {
+    loginPage.fillCredentials('admin@yourstore.com', 'admin').then(() => {
+        loginPage.login().then((dashboardPage) => {
+            var wait = new driver.WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(driver => !driver.FindElement(By.Id("ajaxBusy")).Displayed).then(() => {
+                dashboardPage.logout();
+            },()=>{
+
+            })
+        })
+    })
+})
+
+
+//var dashboardPage = loginPage.login();
+//dashboardPage.logout();
