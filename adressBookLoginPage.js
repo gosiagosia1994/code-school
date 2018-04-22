@@ -15,9 +15,13 @@ class AdressBookLoginPage{
         })
     }
     submit(){
-        return driver.findElement(By.tagName('submit')).then((loginButton)=>{
-            return loginButton.click()
-        });
+        return driver.findElement(By.xpath('//form[@id="LoginForm"]/input[3]')).then((loginButton) => {
+            return loginButton.click().then(()=>{
+                return require('./groupPage');
+                return require('./tabs');
+                return console.log('login ok');
+                })
+        })
     }
 }
 module.exports = new AdressBookLoginPage();
