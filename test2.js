@@ -20,12 +20,14 @@ var LoginPage = require('./pages/loginPage');
 var loginPage = LoginPage;
 loginPage.goTo().then(() => {
     loginPage.fillCredentials('admin@yourstore.com', 'admin').then(() => {
-        loginPage.login().then((dashboardPage) => {
-            dashboardPage.getTitle().then((title) => {
-               console.log(title);
+        loginPage.login()
+        //.then()(dashboardPage) => {
+          //  dashboardPage.getTitle().then((title) => {
+            //   console.log(title);
                // expect(title).toEqual('Dashboard / nopCommerce administration');
             });
         })
-    })
-})
+    //})
+//})
+
 

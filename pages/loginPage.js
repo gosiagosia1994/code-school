@@ -24,11 +24,12 @@ class LoginPage {
     login() {
         return driver.findElement(By.css("input.button-1.login-button")).then((loginButton) => {
             console.log('Znalazlem element login button');
-            return loginButton.click().then(() => {
-                console.log('Klikłem na element login button');
-                return require('./dashboardPage');
+            return loginButton.click()
+            //.then(() => {
+              //  console.log('Klikłem na element login button');
+                //return require('./dashboardPage');
             })
-        })
+       // })
 
     }
 }
