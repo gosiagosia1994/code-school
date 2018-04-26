@@ -18,8 +18,6 @@ class AdressBookLoginPage{
         return driver.findElement(By.xpath('//form[@id="LoginForm"]/input[3]')).then((loginButton) => {
             return loginButton.click().then(()=>{
                 return require('./groupPage');
-                return require('./tabs');
-                return console.log('login ok');
                 })
         })
     }
