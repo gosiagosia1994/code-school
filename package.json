@@ -2,10 +2,7 @@
   "name": "code-school",
   "version": "1.0.0",
   "description": "",
-  "main": "adressBook.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/gosiagosia1994/code-school.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
