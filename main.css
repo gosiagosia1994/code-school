@@ -1,0 +1,31 @@
+/* div{
+    height: 100px;
+    width: 100px;
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 10px;
+} */
+.item{
+    height: 100px;
+    background-color: lightgrey;
+    padding: 10px;
+    margin: 10px; 
+    content: '\d7';
+}
+.grid{
+    width:400px!important;
+    height: 400px!important;
+}
+.cross:after{
+    content: "\274c";
+    color: #000;
+    font-size: 50px;
+    margin-left: 20%;
+}
+
+.circle:after{  
+    content: "\25CF";
+    color: #000;
+    font-size: 50px;
+    margin-left: 20%;
+}

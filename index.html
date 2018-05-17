@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <script src="main2.js"></script>
+    <script src="main1.js"></script>
+
+
+</head>
+
+<body>
+    <div class="container grid">
+        <div class="row">
+            <div id="d1" class="col-sm item cross" onmousemove="changeColor('d1')" onmouseout="reset('d1')"></div>
+            <div id="d2" class="col-sm item circle" onmousemove="changeColor('d2')" onmouseout="reset('d2')">2</div>
+            <div id="d3" class="col-sm item" onclick="setMark('d3')" onmousemove="changeColor('d3')" onmouseout="reset('d3')"></div>
+        </div>
+        <div class="row">
+            <div id="d4" class="col-sm item"onmousemove="changeColor('d4')" onmouseout="reset('d4')">4</div>
+            <div id="d5" class="col-sm item"onmousemove="changeColor('d5')" onmouseout="reset('d5')">5</div>
+            <div id="d6" class="col-sm item"onmousemove="changeColor('d6')" onmouseout="reset('d6')">6</div>
+        </div>
+        <div class="row">
+            <div id="d7" class="col-sm item"onmousemove="changeColor('d7')" onmouseout="reset('d7')">7</div>
+            <div id="d8" class="col-sm item"onmousemove="changeColor('d8')" onmouseout="reset('d8')">8</div>
+            <div id="d9"class="col-sm item"onmousemove="changeColor('d9')" onmouseout="reset('d9')">9</div>
+        </div>
+
+    </div>
+</body>
+
+
+</html>
